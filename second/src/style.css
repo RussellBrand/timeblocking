@@ -16,4 +16,13 @@
 
 .hour_block {
   color: green;
+  display: flex;
+  align-items: center;
+  text-indent: -100%;
+  font-size: 12px;
+  position: absolute;
+  left: 10%;
+  width: 90%;
+  height: 2px;
+  background-color: blue;
 }
