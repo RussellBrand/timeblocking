@@ -11,3 +11,10 @@ test of console ninja
 Note that we are using exactly version 6.0.1 of `vite` -- new versions are not yet supported in `console-ninja`
 
 `node` version 22.9.0
+
+
+## Branches
+
+### master
+
+### console-ninja-testing
