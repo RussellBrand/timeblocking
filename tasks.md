@@ -1,12 +1,12 @@
 # tasks
 
 ## [ ] emacs support for triple hash
-## [ ] console ninja
+## [Y] console ninja
 ## [ ] time based bounding box
 ## [ ] save/restore to local storage
 ## [ ] save/restore to local disk
-## [ ] display at time
-## [ ] display with length 
+## [ ] display at the right verical "time" point
+## [ ] display with duration as "item height"
 ## [ ] create
 ## [ ] edit time
 ## [ ] edit length
@@ -19,6 +19,4 @@
 ## [ ] pick a framework
 ## [ ] typescript
 ## [ ] jsx
-## [ ] 
-## [ ] 
-## [ ] 
+
