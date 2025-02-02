@@ -18,9 +18,6 @@ export function DisplayTimeline({
 
   return (
     <div>
-      <h2>
-        Time Line from {startTime} to {endTime} in {height} pixels
-      </h2>
       <ul
         className="timeline"
         style={{ height: `${height}px`, fontSize: `${scalingFactor / 2}px` }}

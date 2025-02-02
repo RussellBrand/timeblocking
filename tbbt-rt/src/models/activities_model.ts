@@ -91,7 +91,7 @@ export const initialActivities: Activity[] = sortedByStartActivities([
     id: 1004,
     status: Status.SKIPPED,
   }),
-  createActivity("Make activities editable", 18.0, 1, { id: 1005 }),
+  createActivity("Make activities editable", 1.0, 1, { id: 1005 }),
   createActivity("Sort activities by time", 2.0, 3, {
     status: Status.DONE,
   }),
