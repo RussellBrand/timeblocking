@@ -2,7 +2,14 @@
 
 
 ## [ ] give each actity and ID
-## [ ] 
+## [ ] if we put the day start & end on #timeline block, 
+and factor out the computations of start time and duration height, 
+we could do panning an zooming by changing the day start & end on #timeline block, 
+
+not a necessarily a wonderful permanent solution, but could work
+
+it almost makes we want to do this in react...
+
 ## [ ] 
 ## [ ] 
 
