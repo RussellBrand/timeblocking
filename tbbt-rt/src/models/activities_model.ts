@@ -42,12 +42,33 @@ export function countOverlapsFromPrevious(
   activities_sort_by_starttimes: Activity[]
 ): number {
   let count = 0;
-  activities_sort_by_starttimes.forEach((act) => {
+  for (const act of activities_sort_by_starttimes) {
     if (act.id === activity.id) {
-      return count;
+      break;
     }
     if (act.start + act.duration > activity.start) {
       count++;
+    }
+  }
+  return count;
+}
+
+export function OLDcountOverlapsFromPrevious(
+  activity: Activity,
+  activities_sort_by_starttimes: Activity[]
+): number {
+  let count = 0;
+  let skipping = false;
+  activities_sort_by_starttimes.forEach((act) => {
+    console.log(act.id, activity.id);
+    if (act.id === activity.id) {
+      skipping = true;
+      return count;
+    }
+    if (act.start + act.duration > activity.start) {
+      if (!skipping) {
+        count++;
+      }
     }
   });
   return count;
@@ -57,12 +78,12 @@ export const initialActivities: Activity[] = sortedByStartActivities([
   createActivity("Divide App.tsx into seperate files", 6.0, 1, {
     id: 1001,
   }),
-  createActivity("create typedefs", 9.0, 3, {
+  createActivity("create typedefs", 9.0, 13, {
     id: 1002,
     status: Status.DONE,
   }),
   createActivity("Make form for creating new tasks", 12.0, 1, { id: 1003 }),
-  createActivity("Reimplement in COBOL", 14.0, 2, {
+  createActivity("Reimplement in COBOL", 13.5, 2, {
     id: 1004,
     status: Status.SKIPPED,
   }),

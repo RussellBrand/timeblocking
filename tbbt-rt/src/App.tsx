@@ -87,7 +87,7 @@ function TimelineActivityItem({
       style={{
         top: `${activity.start * scalingFactor}px`,
         height: `${activity.duration * scalingFactor}px`,
-        left: `${overlapCount * 20}px`,
+        left: `${overlapCount * 40}px`,
       }}
     >
       {activity.start}: {activity.title}
