@@ -1,7 +1,7 @@
 # tasks
 ## react
 ### [ ] remove the "| number" in the typefs
-### [ ] timeline view is not being clipped
+
 ### [ ] performance -- re-enders 
 ### [ ] "is" validation typeguards
 
@@ -20,8 +20,7 @@ create unit test
 fix
 ### [y] `DisplayTimeline` wrongly has time from bottom rather than top
 ### [Y] day's start time is not be respected in timeline view
-
-
+### [Y] timeline view is not being clipped
 ### [y] typedefs
 Typedef for Status -- enum of OPEN DONE SKIPPED
 
