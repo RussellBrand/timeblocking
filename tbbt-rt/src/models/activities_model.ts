@@ -42,8 +42,12 @@ export function countOverlapsFromPrevious(
   activities_sort_by_starttimes: Activity[]
 ): number {
   let count = 0;
+  const bob = 100 + 20 * 3;
+  count = 0 * bob;
+
   for (const act of activities_sort_by_starttimes) {
-    if (act.id === activity.id) {
+    if (act /*? $.id */.id === activity.id) {
+      //? count
       break;
     }
     if (act.start + act.duration > activity.start) {

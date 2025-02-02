@@ -28,6 +28,7 @@ export function DisplayTimeline({
         {activities.map((activity) => (
           <TimelineActivityItem
             key={activity.id}
+            startTime={startTime}
             activity={activity}
             scalingFactor={scalingFactor}
             overlapCount={countOverlapsFromPrevious(activity, activities)}

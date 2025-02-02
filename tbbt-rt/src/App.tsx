@@ -29,8 +29,8 @@ function App() {
       <DisplayActivities activities={activities} />
       <DisplayTimeline
         activities={activities}
-        startTime={0}
-        endTime={24}
+        startTime={2}
+        endTime={22}
         height={600}
       />
     </>

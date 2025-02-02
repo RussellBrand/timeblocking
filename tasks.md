@@ -1,12 +1,26 @@
 # tasks
 ## react
+### [ ] remove the "| number" in the typefs
+### [ ] timeline view is not being clipped
+### [ ] performance -- re-enders 
+### [ ] "is" validation typeguards
+
+look at `GuardExample` in `tbbt-rt/src/types.ts`
+
+### [ ] zod 
+https://fullstackopen.com/en/part9/typing_an_express_app#using-schema-validation-libraries
+
+or `io-ts` or `runtypes` 
+
+### [ ] prepend z-buffer for move
+### [ ] putting sample data into seperate file
 
 ### [ ] `countOverlapsFromPrevious` --  computes wrong
 create unit test
 fix
 ### [y] `DisplayTimeline` wrongly has time from bottom rather than top
-### [ ]
-### [ ]
+### [Y] day's start time is not be respected in timeline view
+
 
 ### [y] typedefs
 Typedef for Status -- enum of OPEN DONE SKIPPED
@@ -38,18 +52,7 @@ duration: DURATION
 
 
 
-### [ ] performance -- re-enders 
-### [ ] "is" validation typeguards
 
-look at `GuardExample` in `tbbt-rt/src/types.ts`
-
-### [ ] zod 
-https://fullstackopen.com/en/part9/typing_an_express_app#using-schema-validation-libraries
-
-or `io-ts` or `runtypes` 
-
-### [ ] prepend z-buffer for move
-### [ ] putting sample data into seperate file
 
 
 ## original 
