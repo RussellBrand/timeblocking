@@ -1,7 +1,17 @@
 const myButton = document.getElementById("myButton");
 
 myButton.addEventListener("mousedown", function (event) {
-  console.log("\n\n****mousedown fired");
+  console.log("****    mousedown fired");
+  const isCtrlPressed = event.ctrlKey; // control brings up the context menu
+  const isShiftPressed = event.shiftKey;
+  const isAltPressed = event.altKey;
+  const isMetaPressed = event.metaKey;
+
+  console.log("Control key pressed:", isCtrlPressed);
+  console.log("Shift key pressed:", isShiftPressed);
+  console.log("Alt key pressed:", isAltPressed);
+  console.log("Meta key pressed:", isMetaPressed);
+
   let mouseMoved = false;
 
   function onMouseMove() {
