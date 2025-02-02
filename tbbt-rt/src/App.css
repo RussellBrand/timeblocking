@@ -13,13 +13,28 @@
   font-weight: bold;
 }
 .open {
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.5);
 }
 
 .done {
-  background-color: lightgreen;
+  background-color: rgba(144, 238, 144, 0.5);
 }
 
 .skipped {
-  background-color: pink;
+  background-color: rgba(255, 192, 203, 0.5);
+}
+
+.timeline_activity {
+  outline: black solid 1px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline {
+  outline: blue solid 1px;
+  position: relative;
+  left: 50px;
+  width: 80%;
 }
