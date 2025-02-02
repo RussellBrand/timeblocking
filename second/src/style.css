@@ -25,6 +25,7 @@
   width: 90%;
   height: 2px;
   background-color: blue;
+  user-select: none;
 }
 
 .activity {
@@ -43,5 +44,5 @@
 
 .activity:last-child {
   width: 90%;
-  background-color: pink;
+  background-color: rgba(241, 7, 46, 0.3);
 }
