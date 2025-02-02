@@ -5,6 +5,7 @@ import { Activity, initialActivities } from "./models/activities_model";
 import { DisplayActivities } from "./components/DisplayActivities";
 import { DisplayTimeline } from "./components/DisplayTimeline";
 import { DisplayGrid } from "./components/DisplayGrid";
+import { formatTime } from "./types";
 // import { TIME } from "./types";
 
 function ignore_unused<T>(_: T) {
@@ -25,7 +26,8 @@ function App() {
       <div>Form for creating new tasks goes here</div>
       <DisplayActivities activities={activities} />
       <h2>
-        Time Line from {startTime} to {endTime} in {height} pixels
+        Timeline from {formatTime(startTime)} to {formatTime(endTime)} in{" "}
+        {height} pixels
       </h2>
       <DisplayGrid startTime={startTime} endTime={endTime} height={height} />
       <DisplayTimeline

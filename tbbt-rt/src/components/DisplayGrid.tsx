@@ -15,24 +15,15 @@ export function DisplayGrid({
       <div
         className="grid"
         style={{
-          position: "absolute",
           height: `${height}px`,
-          width: "80%",
-          outline: "1px solid black",
         }}
       >
         {Array.from({ length: endTime - startTime }, (_, i) => (
           <div
             key={i}
+            className="grid_line"
             style={{
               top: `${i * scalingFactor}px`,
-              position: "absolute",
-              height: "1px",
-              backgroundColor: "orange",
-              left: "10px",
-              right: "0px",
-              display: "flex",
-              alignItems: "center",
             }}
           >
             {startTime + i}
