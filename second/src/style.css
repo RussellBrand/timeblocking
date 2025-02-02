@@ -28,15 +28,15 @@
 }
 
 .activity {
-  color: red;
+  color: blue;
   display: flex;
   align-items: center;
   text-indent: 100%;
   font-size: 12px;
   position: absolute;
   left: 10%;
-  width: 90%;
+  width: 60%;
   height: 2px;
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.3);
   outline: black solid 1px;
 }

@@ -30,6 +30,12 @@ function createActivity(taskStart, taskDuration, taskName) {
   activity.style.top = `${topPosition}px`;
   activity.style.height = `${height}px`;
   activity.textContent = taskName;
+
+  const existingActivities = document.querySelectorAll(
+    "#timeline_block .activity"
+  ).length;
+  activity.style.left = `${5 * existingActivities}%`;
+
   document.querySelector("#timeline_block").appendChild(activity);
 }
 
