@@ -1,5 +1,8 @@
 # tasks
 ## react
+
+### [ ] move styles from DisplayGrid -> css
+
 ### [ ] remove the "| number" in the typefs
 
 ### [ ] performance -- re-enders 
