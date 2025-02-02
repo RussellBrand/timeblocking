@@ -47,6 +47,24 @@ function createActivity(taskStart, taskDuration, taskName) {
 
   activity.style.left = `${5 * overlapCount}%`;
 
+  activity.addEventListener("mousedown", function (event) {
+    const initialY = event.clientY;
+    const initialTop = parseFloat(activity.style.top);
+
+    function onMouseMove(event) {
+      const deltaY = event.clientY - initialY;
+      activity.style.top = `${initialTop + deltaY}px`;
+    }
+
+    function onMouseUp() {
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseup", onMouseUp);
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+  });
+
   document.querySelector("#timeline_block").appendChild(activity);
 }
 

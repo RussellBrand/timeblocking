@@ -1,5 +1,11 @@
 # tasks
 
+
+## [ ] give each actity and ID
+## [ ] 
+## [ ] 
+## [ ] 
+
 ## [ ] emacs support for triple hash
 ## [Y] console ninja
 ## [Y] time based bounding box
