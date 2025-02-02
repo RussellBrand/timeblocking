@@ -26,6 +26,6 @@
 ## [ ] typescript
 ## [ ] jsx
 ## [ ] recalculate times for drag & drop
-## [ ] 
+## [ ] figure out the long-click, short-click issue
 ## [ ] 
 ## [ ] 

@@ -12,6 +12,10 @@ Note that we are using exactly version 6.0.1 of `vite` -- new versions are not y
 
 `node` version 22.9.0
 
+### clicker/
+
+demonstrating differentation of click & mouse down -- there has to be a better way to do this
+
 
 ## Branches
 
