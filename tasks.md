@@ -20,9 +20,12 @@
 ## [ ] display state
 ## [ ] edit state
 ## [ ] second column
-## [ ] drag & drop
+## [Y] drag & drop
 ## [ ] collisions
 ## [ ] pick a framework
 ## [ ] typescript
 ## [ ] jsx
-
+## [ ] recalculate times for drag & drop
+## [ ] 
+## [ ] 
+## [ ] 

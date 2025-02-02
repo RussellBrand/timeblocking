@@ -40,3 +40,8 @@
   background-color: rgba(255, 255, 0, 0.3);
   outline: black solid 1px;
 }
+
+.activity:last-child {
+  width: 90%;
+  background-color: pink;
+}

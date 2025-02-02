@@ -56,9 +56,17 @@ function createActivity(taskStart, taskDuration, taskName) {
       activity.style.top = `${initialTop + deltaY}px`;
     }
 
-    function onMouseUp() {
+    function onMouseUp(event) {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
+      const parent = activity.parentElement;
+      const firstActivity = parent.querySelector(".activity");
+      if (firstActivity) {
+        parent.insertBefore(activity, firstActivity);
+      } else {
+        // don't really need the else block
+        parent.appendChild(activity);
+      }
     }
 
     document.addEventListener("mousemove", onMouseMove);
