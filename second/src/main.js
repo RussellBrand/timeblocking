@@ -17,10 +17,20 @@ function createHourBlock(hour, topPosition) {
   return line;
 }
 
-function showPopup(taskStart, taskDuration, taskName) {
-  alert(
-    `Task Name: ${taskName}\nStart Time: ${taskStart}\nDuration: ${taskDuration} hours`
-  );
+function createActivity(taskStart, taskDuration, taskName) {
+  // alert(
+  //   `Task Name: ${taskName}\nStart Time: ${taskStart}\nDuration: ${taskDuration} hours`
+  // );
+
+  const activity = document.createElement("div");
+  activity.className = "activity";
+  const startHour = parseTime(taskStart);
+  const topPosition = (startHour - START_HOUR) * delta;
+  const height = (taskDuration / 60) * delta;
+  activity.style.top = `${topPosition}px`;
+  activity.style.height = `${height}px`;
+  activity.textContent = taskName;
+  document.querySelector("#timeline_block").appendChild(activity);
 }
 
 function parseTime(timeStr) {
@@ -58,7 +68,8 @@ document
     const taskStart = parseTime(taskStartStr);
     const taskDuration = document.querySelector("#task_duration").value;
     const taskName = document.querySelector("#task_name").value;
-    showPopup(taskStartStr, taskDuration, taskName);
+    createActivity(taskStartStr, taskDuration, taskName);
+    document.querySelector("#taskForm").reset();
   });
 
 var delta = document.querySelector("#timeline_block").offsetHeight / DAY_LENGTH;

@@ -26,3 +26,17 @@
   height: 2px;
   background-color: blue;
 }
+
+.activity {
+  color: red;
+  display: flex;
+  align-items: center;
+  text-indent: 100%;
+  font-size: 12px;
+  position: absolute;
+  left: 10%;
+  width: 90%;
+  height: 2px;
+  background-color: yellow;
+  outline: black solid 1px;
+}

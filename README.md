@@ -4,7 +4,7 @@
 
 ### second/
 
-test of console ninja 
+Current active development
 
 ### second/package.json
 

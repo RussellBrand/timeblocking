@@ -2,12 +2,12 @@
 
 ## [ ] emacs support for triple hash
 ## [Y] console ninja
-## [ ] time based bounding box
+## [Y] time based bounding box
 ## [ ] save/restore to local storage
 ## [ ] save/restore to local disk
 ## [ ] display at the right verical "time" point
 ## [ ] display with duration as "item height"
-## [ ] create
+## [Y] create activity
 ## [ ] edit time
 ## [ ] edit length
 ## [ ] edit text
