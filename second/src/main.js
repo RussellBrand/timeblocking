@@ -33,8 +33,19 @@ function createActivity(taskStart, taskDuration, taskName) {
 
   const existingActivities = document.querySelectorAll(
     "#timeline_block .activity"
-  ).length;
-  activity.style.left = `${5 * existingActivities}%`;
+  );
+  let overlapCount = 0;
+  existingActivities.forEach((existingActivity) => {
+    const existingTop = parseFloat(existingActivity.style.top);
+    const existingHeight = parseFloat(existingActivity.style.height);
+    const existingBottom = existingTop + existingHeight;
+
+    if (topPosition < existingBottom && topPosition >= existingTop) {
+      overlapCount++;
+    }
+  });
+
+  activity.style.left = `${5 * overlapCount}%`;
 
   document.querySelector("#timeline_block").appendChild(activity);
 }
