@@ -98,21 +98,20 @@ and of course the plan can fail more than once ....
 
 in a future version, the new timeline column could just have the changes. I want to get some experience using the simple version before designing this.
 
+## Current implementation is in 
+directory: `tbbt-rt/`
+branch: `master`
+
 ## Implementation plan
 
 ### Phase 1
 
-Planning to start by implementing in pure JavaScript (jQuerry).
+I've started implementing the front in React/ts
 
-I don't immediately see leverage in using react.
-
-Probably is some framework that would give us leverage.
-
-Start with buttons to explicitly save/restore to/from browser-local-storage and to the file system
+Will start with buttons to explicitly save/restore to/from browser-local-storage and to the file system before adding a backend.
 
 ### Not in phase 1
 
-- Typescript
 - Back end
 - Management of the list of potential tasks/projects
 - Journaling of what was accomplished
