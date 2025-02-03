@@ -1,16 +1,16 @@
-import { aC } from "vitest/dist/chunks/reporters.0x019-V2.js";
 import { Activity } from "../models/activities_model";
-import { TIME } from "../types";
-import { act } from "react";
+import { TIME, VH } from "../types";
 
 export function TimelineActivityItem({
   activity,
   scalingFactor,
+  v_scalingFactor,
   overlapCount,
   startTime,
 }: {
   activity: Activity;
   scalingFactor: number;
+  v_scalingFactor: VH;
   overlapCount: number;
   startTime: TIME | number;
 }) {

@@ -62,3 +62,21 @@ export function formatTime(time: TIME | number): string {
     .toString()
     .padStart(2, "0")}`;
 }
+// CSS_DIMENSION is a string that can be used as a CSS dimension value
+
+export type PX = number & { __type: "PX" };
+export type VW = number & { __type: "VW" };
+export type VH = number & { __type: "VH" };
+export type CSS_DIMENSION = string & { __type: "CSS_DIMENSION" };
+
+export function px_to_css_dimension(px: PX): CSS_DIMENSION {
+  return `${px}px` as CSS_DIMENSION;
+}
+
+export function vw_to_css_dimension(vw: VW): CSS_DIMENSION {
+  return `${vw}vw` as CSS_DIMENSION;
+}
+
+export function vh_to_css_dimension(vh: VH): CSS_DIMENSION {
+  return `${vh}vh` as CSS_DIMENSION;
+}
