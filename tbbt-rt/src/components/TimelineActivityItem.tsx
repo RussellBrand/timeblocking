@@ -13,25 +13,51 @@ export function TimelineActivityItem({
   scalingFactor: number;
   v_scalingFactor: VH;
   overlapCount: number;
-  startTime: TIME | number;
+  startTime: TIME;
 }) {
-  const [activityStart, setActivityStart] = useState(activity.start);
+  const [activityStart, setActivityStart] = useState<TIME>(activity.start);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartY, setDragStartY] = useState(0);
+  const [dragOffsetY, setDragOffsetY] = useState(0);
 
-  const handleClick = () => {
-    setActivityStart((prevStart) => prevStart + 1);
+  const handleMouseDown = (event: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragStartY(event.clientY);
+    setDragOffsetY(event.clientY - (activityStart - startTime) * scalingFactor);
+  };
+
+  const handleMouseMove = (event: React.MouseEvent) => {
+    if (!isDragging) {
+      return;
+    }
+    if (event.button !== 0) {
+      handleMouseUp();
+      return;
+    }
+    const newY = event.clientY - dragOffsetY;
+    const newStart = startTime + newY / scalingFactor;
+    setActivityStart(newStart as TIME);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
   };
 
   return (
     <li
       className={`timeline_activity ${activity.status.toLowerCase()}`}
       style={{
-        top: `${(activityStart - startTime) * scalingFactor}px`,
-        height: `${activity.duration * scalingFactor}px`,
-        left: `${overlapCount * 40}px`,
+        top: `${((activityStart - startTime) * scalingFactor).toFixed(1)}px`,
+        height: `${(activity.duration * scalingFactor).toFixed(1)}px`,
+        left: `${(overlapCount * 40).toFixed(1)}px`,
+        cursor: isDragging ? "grabbing" : "grab",
       }}
-      onClick={handleClick}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
     >
-      {activityStart}-{activityStart + activity.duration}: {activity.title}
+      ** {activityStart.toFixed(1)}-
+      {(activityStart + activity.duration).toFixed(1)}: {activity.title}
     </li>
   );
 }
