@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 
-import { Activity, initialActivities } from "./models/activities_model";
+import {
+  Activity,
+  initialActivities,
+  sortedByStartActivities,
+} from "./models/activities_model";
 import { DisplayActivities } from "./components/DisplayActivities";
 import { DisplayTimeline } from "./components/DisplayTimeline";
 import { DisplayGrid } from "./components/DisplayGrid";
@@ -16,6 +20,18 @@ function App() {
   const [activities, _setActivities_raw] =
     useState<Activity[]>(initialActivities);
   ignore_unused(_setActivities_raw);
+
+  function setActivities(newActivities: Activity[]) {
+    _setActivities_raw(sortedByStartActivities(newActivities));
+  }
+
+  function updateActivity(activity: Activity) {
+    const newActivities = activities.map((a) =>
+      a.id === activity.id ? activity : a
+    );
+    setActivities(newActivities);
+  }
+
   const height = 400;
   const vheight: VH = (height / 10) as VH;
   const startTime: TIME = 0.5 as TIME;
@@ -42,6 +58,7 @@ function App() {
         endTime={endTime}
         height={height}
         vheight={vheight}
+        updateActivity={updateActivity}
       />
     </>
   );

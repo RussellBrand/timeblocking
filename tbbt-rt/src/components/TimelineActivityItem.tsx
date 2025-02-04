@@ -8,12 +8,14 @@ export function TimelineActivityItem({
   v_scalingFactor,
   overlapCount,
   startTime,
+  updateActivity,
 }: {
   activity: Activity;
   scalingFactor: number;
   v_scalingFactor: VH;
   overlapCount: number;
   startTime: TIME;
+  updateActivity: (activity: Activity) => void;
 }) {
   const [activityStart, setActivityStart] = useState<TIME>(activity.start);
   const [isDragging, setIsDragging] = useState(false);
@@ -41,6 +43,8 @@ export function TimelineActivityItem({
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    activity.start = activityStart;
+    updateActivity(activity);
   };
 
   return (
