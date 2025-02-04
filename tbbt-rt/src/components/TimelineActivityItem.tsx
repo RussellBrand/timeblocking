@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Activity } from "../models/activities_model";
 import { TIME, VH } from "../types";
 
@@ -14,16 +15,23 @@ export function TimelineActivityItem({
   overlapCount: number;
   startTime: TIME | number;
 }) {
+  const [activityStart, setActivityStart] = useState(activity.start);
+
+  const handleClick = () => {
+    setActivityStart((prevStart) => prevStart + 1);
+  };
+
   return (
     <li
       className={`timeline_activity ${activity.status.toLowerCase()}`}
       style={{
-        top: `${(activity.start - startTime) * scalingFactor}px`,
+        top: `${(activityStart - startTime) * scalingFactor}px`,
         height: `${activity.duration * scalingFactor}px`,
         left: `${overlapCount * 40}px`,
       }}
+      onClick={handleClick}
     >
-      {activity.start}-{activity.start + activity.duration}: {activity.title}
+      {activityStart}-{activityStart + activity.duration}: {activity.title}
     </li>
   );
 }
