@@ -17,12 +17,12 @@ export function TimelineActivityItem({
 }) {
   const [activityStart, setActivityStart] = useState<TIME>(activity.start);
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStartY, setDragStartY] = useState(0);
+  // const [dragStartY, setDragStartY] = useState(0);
   const [dragOffsetY, setDragOffsetY] = useState(0);
 
   const handleMouseDown = (event: React.MouseEvent) => {
     setIsDragging(true);
-    setDragStartY(event.clientY);
+    // setDragStartY(event.clientY);
     setDragOffsetY(event.clientY - (activityStart - startTime) * scalingFactor);
   };
 
