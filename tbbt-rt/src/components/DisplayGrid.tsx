@@ -1,16 +1,18 @@
-import { TIME, VW } from "../types";
+import { TIME, VH } from "../types";
 
 export function DisplayGrid({
   startTime,
   endTime,
   height,
+  vheight
 }: {
   startTime: TIME | number;
   endTime: TIME | number;
   height: number;
-  vheight: VW;
+  vheight: VH;
 }) {
   const scalingFactor = height / (endTime - startTime);
+  const v_scalingFactor : VH = vheight / (endTime - startTime) as VH;
   return (
     <div>
       <div
