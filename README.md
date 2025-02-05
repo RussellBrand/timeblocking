@@ -7,18 +7,6 @@ The current project description is in `description.md`
 
 
 
-### second -- test node library version compatibilty
-
-I am fond of the wallabyjs tool set.
-
-
-
-We are using exactly version 6.0.1 of `vite` -- new versions are not yet supported in `console-ninja`
-
-Currently using `node` version 22.9.0.
-
-The latest version of `node` is not support
-
 ### clicker/
 
 Testing differentation of click & mouse down -- there has to be a better way to do this.
