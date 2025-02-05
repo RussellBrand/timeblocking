@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Activity } from "../models/activities_model";
 import { TIME, VH } from "../types";
 
@@ -22,29 +22,41 @@ export function TimelineActivityItem({
   // const [dragStartY, setDragStartY] = useState(0);
   const [dragOffsetY, setDragOffsetY] = useState(0);
 
+  useEffect(() => {
+    if (!isDragging) return;
+
+    const handleMouseMove = (event: MouseEvent) => {
+      const newY = event.clientY - dragOffsetY;
+      const newStart = startTime + newY / scalingFactor;
+      setActivityStart(newStart as TIME);
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      activity.start = activityStart;
+      updateActivity(activity);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [
+    isDragging,
+    dragOffsetY,
+    scalingFactor,
+    startTime,
+    activity,
+    activityStart,
+    updateActivity,
+  ]);
+
   const handleMouseDown = (event: React.MouseEvent) => {
     setIsDragging(true);
-    // setDragStartY(event.clientY);
     setDragOffsetY(event.clientY - (activityStart - startTime) * scalingFactor);
-  };
-
-  const handleMouseMove = (event: React.MouseEvent) => {
-    if (!isDragging) {
-      return;
-    }
-    if (event.button !== 0) {
-      handleMouseUp();
-      return;
-    }
-    const newY = event.clientY - dragOffsetY;
-    const newStart = startTime + newY / scalingFactor;
-    setActivityStart(newStart as TIME);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    activity.start = activityStart;
-    updateActivity(activity);
   };
 
   return (
@@ -57,8 +69,6 @@ export function TimelineActivityItem({
         cursor: isDragging ? "grabbing" : "grab",
       }}
       onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
     >
       ** {activityStart.toFixed(1)}-
       {(activityStart + activity.duration).toFixed(1)}: {activity.title}

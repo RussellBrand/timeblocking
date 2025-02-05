@@ -41,7 +41,7 @@ function App() {
       <h1>Time Blocking</h1>
       <h2>React Typescript</h2>
       <div>Form for creating new tasks goes here</div>
-      <DisplayActivities activities={activities} />
+      {/* <DisplayActivities activities={activities} /> */}
       <h2>
         Timeline from {formatTime(startTime)} to {formatTime(endTime)} in{" "}
         {height} pixels
